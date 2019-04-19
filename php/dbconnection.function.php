@@ -4,7 +4,7 @@ function dbconnection($spString)
 {
     $dbuser = 'root';
     $dbpass = '';
-    $dbconnstring = 'mysql:host=localhost:3307;dbname=travels;';
+    $dbconnstring = 'mysql:host=localhost:3306;dbname=travels;';
 
     try {
         $pdo = new PDO($dbconnstring, $dbuser, $dbpass, array('charset' => 'utf8'));
