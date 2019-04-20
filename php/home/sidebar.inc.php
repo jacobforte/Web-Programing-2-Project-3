@@ -1,50 +1,68 @@
-<div class="col-lg-3 col-12">
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header bg-pan">
-                    <p class="mb-0 text-white">Search</p>
-                </div>
-                <div class="card-body">
-                    <form action="" method="post">
-                        <div class="input-group">
-                            <input type="text" name="term" class="form-control">
-                            <div class="input-group-append">
-                                <button type="submit" name="searchSubmit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-                            </div>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <p class="mb-0">Search</p>
+            </div>
+            <div class="card-body">
+                <form action="" method="post">
+                    <div class="input-group">
+                        <input type="text" name="term" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" name="searchSubmit" class="btn btn-primary"><i class="fas fa-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="row mb-4">
-        <div class="col-12">
-            <ul class="list-group">
-                <li class="list-group-item bg-pan text-white">Continents</li>
-                <li class="list-group-item"><a href="browse-images.php?continent=AF" class="link-pan">Africa</a></li>
-                <li class="list-group-item"><a href="browse-images.php?continent=AS" class="link-pan">Asia</a></li>
-                <li class="list-group-item"><a href="browse-images.php?continent=EU" class="link-pan">Europe</a></li>
-                <li class="list-group-item"><a href="browse-images.php?continent=NA" class="link-pan">North America</a></li>
-                <li class="list-group-item"><a href="browse-images.php?continent=OC" class="link-pan">Oceania</a></li>
-                <li class="list-group-item"><a href="browse-images.php?continent=SA" class="link-pan">South America</a></li>
-            </ul>
-        </div>
+</div>
+<div class="row mb-4">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item">Continents</li>
+            <?php
+            $data = dbconnection("spSelectAllContinents()");
+            foreach ($data as $continent) {
+                echo '<li class="list-group-item">';
+                echo '<a href="searchResults.php?id=' . $continent['ContinentCode'] . '">' . $continent['ContinentName'] . '</a>';
+                echo '</li>';
+            }
+            ?>
+        </ul>
     </div>
-    <div class="row mb-4">
-        <div class="col-12">
-            <ul class="list-group">
-                <li class="list-group-item bg-pan text-white">Popular</li>
-                <li class="list-group-item"><a href="country.php?id=CA" class="link-pan">Canada</a></li>
-                <li class="list-group-item"><a href="country.php?id=IT" class="link-pan">Italy</a></li>
-                <li class="list-group-item"><a href="country.php?id=DE" class="link-pan">Germany</a></li>
-                <li class="list-group-item"><a href="country.php?id=GH" class="link-pan">Ghana</a></li>
-                <li class="list-group-item"><a href="country.php?id=GR" class="link-pan">Greece</a></li>
-                <li class="list-group-item"><a href="country.php?id=HU" class="link-pan">Hungary</a></li>
-                <li class="list-group-item"><a href="country.php?id=ES" class="link-pan">Spain</a></li>
-                <li class="list-group-item"><a href="country.php?id=GB" class="link-pan">United Kingdom</a></li>
-                <li class="list-group-item"><a href="country.php?id=US" class="link-pan">United States</a></li>
-            </ul>
-        </div>
+</div>
+<div class="row mb-4">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item">Countries</li>
+            <?php
+                $data = dbconnection("spSelectCountriesWithImages()");
+                foreach ($data as $country) {
+                    echo '<li class="list-group-item">';
+                    echo '<a href="singleCountry.php?id=' . $country['ISO'] . '">' . $country['CountryName'] . '</a>';
+                    echo '</li>';
+                }
+            ?>
+        </ul>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item">
+               Cities
+            </li>
+            <?php
+                $data = dbconnection("spSelectCitiesWithImages()");
+                foreach ($data as $city) {
+                    if (!$city['ID'] == "") {
+                        echo '<li class="list-group-item">';
+                        echo '<a href="singleCity.php?id=' . $city['ID'] . '">' . $city['name'] . '</a>';
+                        echo '</li>';
+                    }
+                }
+            ?>
+        </ul>
     </div>
 </div>

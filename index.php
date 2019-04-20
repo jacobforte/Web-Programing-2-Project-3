@@ -18,21 +18,21 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="./travel-images/home/1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption">
                                 <h5>Plan your next vacation</h5>
                                 <p>Browse member pictures and posts</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="./travel-images/home/2.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Share your travels with others</h5>
-                                <p>Post your experiences and pictures for others to see</p>
+                            <div class="carousel-caption">
+                                <h5>Share your travels</h5>
+                                <p>Post your experiences for others to see</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="./travel-images/home/3.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption">
                                 <h5>Follow your friends</h5>
                                 <p>Favorite your friends pictures</p>
                             </div>
@@ -49,22 +49,29 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        <h5 class="font-weight-bold mb-3">Top Images</h5>
+                    <div class="col-md-3 col-12">
+                        <?php include("php/home/sidebar.inc.php") ?>
                     </div>
-                </div>
-                <div class="row">
-                    <?php outputTopImages(); ?>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h5 class="font-weight-bold mb-3">New Additions</h5>
+                    <div class="col-md-9 col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="font-weight-bold mb-3">Top Images</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <?php outputTopImages(); ?>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="font-weight-bold mb-3">New Additions</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <?php outputNewImages(); ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <?php outputNewImages(); ?>
                 </div>
             </div>
         </main>
