@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php include("php/header.php"); ?>
-
+        <?php include("php/home/home.functions.php"); ?>
         <main>
             <div class="bd-example mb-3">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -52,70 +52,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h5 class="mb-3">Top Images</h5>
+                        <h5 class="font-weight-bold mb-3">Top Images</h5>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
+                    <?php outputTopImages(); ?>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <h5 class="mb-3">New Additions</h5>
+                        <h5 class="font-weight-bold mb-3">New Additions</h5>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-4">
-                        <img src="https://via.placeholder.com/150x150.png">
-                    </div>
+                    <?php outputNewImages(); ?>
                 </div>
-
             </div>
         </main>
         
