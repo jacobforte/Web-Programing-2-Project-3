@@ -13,7 +13,7 @@
     <body>
         <?php include("php/header.php"); ?>
 
-    <main class="container-fluid mt-4">
+    <main class="container mt-4">
         <div class="row">
             <div class="col-12 order-last col-md-3 order-md-first">
                 <?php include("php/home/sidebar.inc.php") ?>
