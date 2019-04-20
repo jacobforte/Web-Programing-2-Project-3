@@ -30,7 +30,7 @@
 
         <main div class="container-fluid mt-2">
             <div class="row">
-                <div class="col-md-3 mt-2">
+                <div class="col-md-3 mt-2 order-last order-md-first">
                     <?php include("php/home/sidebar.inc.php") ?>
                 </div>
                 <div class="col-md">
