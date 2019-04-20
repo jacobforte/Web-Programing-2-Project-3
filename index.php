@@ -17,24 +17,24 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://via.placeholder.com/1000x500.png" class="d-block w-100" alt="...">
+                            <img src="./travel-images/home/1.png" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <h5>Plan your next vacation</h5>
+                                <p>Browse member pictures and posts</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://via.placeholder.com/1000x500.png" class="d-block w-100" alt="...">
+                            <img src="./travel-images/home/2.png" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h5>Share your travels with others</h5>
+                                <p>Post your experiences and pictures for others to see</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="https://via.placeholder.com/1000x500.png" class="d-block w-100" alt="...">
+                            <img src="./travel-images/home/3.png" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                <h5>Follow your friends</h5>
+                                <p>Favorite your friends pictures</p>
                             </div>
                         </div>
                     </div>
