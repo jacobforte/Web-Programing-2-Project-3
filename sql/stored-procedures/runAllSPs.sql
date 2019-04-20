@@ -6,3 +6,6 @@ source spSelectTopImages.sql;
 source spSelectNewImages.sql;
 source spSelectSingleImage.sql;
 source spSelectPostsOnImage.sql;
+source spSelectAllContinents.sql;
+source spSelectCountriesWithImages.sql;
+source spSelectCitiesWithImages.sql;
