@@ -1,3 +1,9 @@
+<?php
+    define('_PATH', $_SERVER["DOCUMENT_ROOT"] . "/Web-Programing-2-Project-3");
+
+    require_once( _PATH . "/php/" . "dbconnection.function.php");
+?>
+
 <div class="row mb-4">
     <div class="col-12">
         <div class="card">

@@ -7,51 +7,44 @@
     <body>
         <?php include("php/header.php"); ?>
 
-        <main class="container">
-		
-			<div class="row">
-			
-				<div class="container" style="padding-right: 0px;" >
-				
-					<h1>About us</h1>
-					
-					<div>
-					
-						<p>This is a website created for the final project for Web programming 2</p>
-						<p>It was Created by Jacob, Zach, Marcus</p>
-						
-						<br></br>
-						
-						<h2>Who Implemented What</h2>
-						<br>
-						
-						<h4>Jacob</h4>
-						<p>Search Results</p>
-						<p>Advanced Search</p>
-						<p>Display Single Travel Image</p>
-						<p>Browse Travel Images</p>
-						
-						<h4>Zach</h4>
-						<p>Home Page</p>
-						<p>Navigation (header)</p>
-						<p>Simple Search</p>
-						<p>Browse Post / User </p>
-						
-						<h4>Marcus</h4>
-						<p>About Us page</p>
-						<p>Display Single Post</p>
-						<p>Add To Favorites </p>
-						<p>View Favorites</p>
-						<p>Display Single Country / City </p>
-						
-						
-						
-						
-					</div>
-				</div>
-				
-			</div>
+        <main class="container mt-4">
+            <div class="row">
+                <div class="col-12 order-last col-md-3 order-md-first">
+                    <?php include("php/home/sidebar.inc.php") ?>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="mb-4">About us</h1>
 
+                            <p>This is a website created for the final project for Web programming 2</p>
+                            <p>It was Created by Jacob, Zach, Marcus</p>
+
+                            <h2 class="mb-4">Who Implemented What</h2>
+
+                            <h4>Jacob</h4>
+                            <p>Search Results</p>
+                            <p>Advanced Search</p>
+                            <p>Display Single Travel Image</p>
+                            <p class="mb-4">Browse Travel Images</p>
+
+                            <h4>Zach</h4>
+                            <p>Home Page</p>
+                            <p>Navigation (header)</p>
+                            <p>Simple Search</p>
+                            <p class="mb-4">Browse Post / User </p>
+
+                            <h4>Marcus</h4>
+                            <p>About Us page</p>
+                            <p>Display Single Post</p>
+                            <p>Add To Favorites </p>
+                            <p>View Favorites</p>
+                            <p>Display Single Country / City </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         
         <?php include("php/footer.php"); ?>
