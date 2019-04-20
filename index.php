@@ -51,10 +51,10 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3 col-12">
+                    <div class="col-12 order-last col-md-3 order-md-first">
                         <?php include("php/home/sidebar.inc.php") ?>
                     </div>
-                    <div class="col-md-9 col-12">
+                    <div class="col-12 col-md-9">
                         <div class="row">
                             <div class="col-12">
                                 <h5 class="font-weight-bold mb-3">Top Images</h5>

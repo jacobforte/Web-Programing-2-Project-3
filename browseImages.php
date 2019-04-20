@@ -13,7 +13,12 @@
     <body>
         <?php include("php/header.php"); ?>
 
-        <main class="container">
+<main class="container mt-4">
+    <div class="row">
+        <div class="col-12 order-last col-md-3 order-md-first">
+            <?php include("php/home/sidebar.inc.php") ?>
+        </div>
+        <div class="col-12 col-md-9">
             <div class="row">
                 <div class="col">
                     <h2>Filters</h2>

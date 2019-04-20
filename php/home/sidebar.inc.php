@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <p class="mb-0">Search</p>
+                <p class="mb-0">Simple Search</p>
             </div>
             <div class="card-body">
                 <form action="" method="post">
@@ -22,12 +22,12 @@
         <ul class="list-group">
             <li class="list-group-item">Continents</li>
             <?php
-            $data = dbconnection("spSelectAllContinents()");
-            foreach ($data as $continent) {
-                echo '<li class="list-group-item">';
-                echo '<a href="searchResults.php?id=' . $continent['ContinentCode'] . '">' . $continent['ContinentName'] . '</a>';
-                echo '</li>';
-            }
+                $data = dbconnection("spSelectAllContinents()");
+                foreach ($data as $continent) {
+                    echo '<li class="list-group-item">';
+                    echo '<a href="searchResults.php?id=' . $continent['ContinentCode'] . '">' . $continent['ContinentName'] . '</a>';
+                    echo '</li>';
+                }
             ?>
         </ul>
     </div>
