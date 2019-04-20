@@ -114,7 +114,7 @@ class SingleUser
             $hide = ($this->user->getPrivacy() == 2 ? true : false);
             echo '<div class="row">
                     <div class="col-12">
-                        <h4 class="font-weight-bold">Contact</h4>
+                        <h4 class="font-weight-bold mb-3">Contact</h4>
                     </div>
                     <div class="col-12 col-sm-4 col-md-12">
                         <h5>Address</h5>';

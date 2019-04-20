@@ -21,24 +21,23 @@
 
         <main>
             <div class="container mt-4">
-
-                <?php $test->outputHeading(); ?>
-
                 <div class="row">
-                    <div class="col-12 col-md-8">
-
-                        <?php $test->outputPosts(); ?>
-
-                        <?php $test->outputImages(); ?>
-
+                    <div class="col-12 order-last col-md-3 order-md-first">
+                        <?php include("php/home/sidebar.inc.php") ?>
                     </div>
-                    <div class="col-12 col-md-4">
-
-                        <?php $test->outputContact(); ?>
-
+                    <div class="col-12 col-md-9">
+                        <?php $test->outputHeading(); ?>
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                <?php $test->outputPosts(); ?>
+                                <?php $test->outputImages(); ?>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <?php $test->outputContact(); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </main>
         

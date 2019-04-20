@@ -8,7 +8,7 @@
 <?php include("php/header.php"); ?>
 <?php include("php/browseUsers/outputUsers.php"); ?>
 <main>
-    <div class="container-fluid mt-4">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12 order-last order-md-first col-md-3">
                 <?php include("php/home/sidebar.inc.php") ?>
