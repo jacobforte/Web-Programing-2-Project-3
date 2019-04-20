@@ -23,7 +23,7 @@ class SingleUser
                 $data[0]["FirstName"], $data[0]["LastName"], $data[0]["Address"], $data[0]["City"], $data[0]["Region"], $data[0]["Country"], $data[0]["Postal"],
                 $data[0]["Phone"], $data[0]["Email"], $data[0]["Privacy"]);
 
-            $data = dbconnection("spSelectPosts(\"" . $uid . "\")");
+            $data = dbconnection("spSelectPosts(\"" . $uid . "\", NULL)");
             foreach ($data as $post) {
                 $this->posts[] = new TravelPost($post["PostID"], $post["UID"], $post["ParentPost"], $post["Title"], $post["Message"], $post["PostTime"]);
             }
@@ -62,6 +62,10 @@ class SingleUser
                 </div>
             <div class="row">';
 
+            if (sizeof($this->posts) == 0) {
+                echo '<div class="col-12"><p>No posts found.</p></div>';
+            }
+
             foreach ($this->posts as $post) {
                 $sqlDate = strtotime($post->getPostTime());
                 $formattedDate = date("M d, Y", $sqlDate);
@@ -87,6 +91,10 @@ class SingleUser
                 <div class="row">
                     <div class="col-12">
                         <div class="row">';
+
+            if (sizeof($this->images) == 0) {
+                echo '<div class="col-12"><p>No images found.</p></div>';
+            }
 
             foreach ($this->images as $image) {
                 echo '<div class="col-6 col-sm-4 col-md-3 mb-4">

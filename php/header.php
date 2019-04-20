@@ -15,14 +15,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Advanced Search</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Browse</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="browseDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Browse
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="browseDropDown">
+                    <a class="dropdown-item" href="browsePosts.php">Posts</a>
+                    <a class="dropdown-item" href="browseImages.php">Images</a>
+                    <a class="dropdown-item" href="browseUsers.php">Users</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="moreDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     More
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="moreDropDown">
                     <a class="dropdown-item" href="#">View Favorites</a>
                     <a class="dropdown-item" href="#">My Account</a>
                     <a class="dropdown-item" href="#">Register</a>

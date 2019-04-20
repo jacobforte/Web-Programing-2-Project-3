@@ -15,7 +15,7 @@
 				$id = $_GET['id'];
 				
 				
-				$row = dbconnection("spSelectPosts('$id')");
+				$row = dbconnection("spSelectPosts(NULL, '$id')");
 				
 				$user = $row[0]['UID'];
 				

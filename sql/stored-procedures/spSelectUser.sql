@@ -12,7 +12,7 @@ BEGIN
     FROM traveluser
     LEFT JOIN traveluserdetails
         ON traveluserdetails.UID = traveluser.UID
-    WHERE traveluser.UID = uid;
+    WHERE (uid IS NULL OR traveluser.UID = uid);
 
 END$$
 DELIMITER ;
