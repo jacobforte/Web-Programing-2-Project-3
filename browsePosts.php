@@ -8,13 +8,20 @@
         <?php include("php/header.php"); ?>
         <?php include("php/browsePosts/outputPosts.php"); ?>
         <main>
-            <div class="container">
+            <div class="container mt-4">
                 <div class="row">
-                    <div class="col-12">
-                        <h3 class="font-weight-bold mb-3">Browse Posts</h3>
+                    <div class="col-12 order-last col-md-3 order-md-first">
+                        <?php include("php/home/sidebar.inc.php") ?>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="font-weight-bold mb-3">Browse Posts</h3>
+                            </div>
+                        </div>
+                        <?php outputPosts(); ?>
                     </div>
                 </div>
-                <?php outputPosts(); ?>
             </div>
         </main>
         
