@@ -66,7 +66,8 @@
 								<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-4">
 									<div class="text-center">
 										<img src="travel-images/square-medium/<?php echo $postimage[0]['Path'];  ?>" class="img-thumbnail p-2 mb-2" alt="database down">
-										<a href="singleImage.php?id=<?php echo $image['ImageID']; ?>" class="btn btn-primary">View</a> <a href="#" class="btn btn-primary">Favorites</a>
+										<a href="singleImage.php?id=<?php echo $image['ImageID']; ?>" class="btn btn-primary">View</a>
+										<button onclick=" addtofav( <?php echo $imagephoto; ?>) " class="btn btn-primary">Favorites</button>
 									</div>
 								</div>
 						<?php	}	?>
