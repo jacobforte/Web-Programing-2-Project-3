@@ -13,3 +13,8 @@ source spSelectImagesOnCountry.sql;
 source spSelectImagesOnPost.sql;
 source spSelectPostsOnSearch.sql;
 source spSelectImagesOnSearch.sql;
+source spSelectCountry.sql;
+source spSelectCity.sql;
+source spSelectCityPost.sql;
+source spSelectCityImage.sql;
+source spSelectCountryimage.sql;
