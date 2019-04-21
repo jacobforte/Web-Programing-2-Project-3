@@ -45,7 +45,7 @@
                 </div>
                 <div class="row mt-3">
                     <?php
-                        $images->print();
+                        $images->output();
                     ?>
                 </div>
             </div>

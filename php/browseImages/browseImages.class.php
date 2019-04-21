@@ -22,13 +22,15 @@ class BrowseImages {
                 $this->countries[] = $row["CountryName"];
             }
         }
+        if (empty($this->imageArray)) {return;}
         sort($this->continents);
         sort($this->countries);
     }
 
-    function print() {
+    function output() {
+        if (empty($this->imageArray)) {return;}
         foreach($this->imageArray as $image) {
-            $image->print();
+            $image->output();
         }
     }
 
