@@ -51,7 +51,7 @@
 						
 							<h3><a href="singlePost.php?id=<?php echo $id; ?>"> <?php echo $row[0]['Title']; ?> </a></h3>
 							<p><?php echo $row[0]['Message']; ?></p>
-							<button onclick="removefav(<?php echo $id; ?>) " class="btn btn-primary btn-sm mb-5">Remove</button>
+							<button onclick="removefavpost(<?php echo $id; ?>) " class="btn btn-primary btn-sm mb-5">Remove</button>
 						
 
 						
@@ -106,7 +106,7 @@
 		
 		<script>
 		
-	function removefav(str) {
+	function removefavpost(str) {
 	
 	$.ajax({
 		url:"",
