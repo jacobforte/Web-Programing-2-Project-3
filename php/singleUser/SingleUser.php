@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("America/Chicago");
 require_once("php/singleUser/User.php");
 require_once("php/singleUser/TravelPost.php");
 require_once("php/singleUser/TravelImage.php");
