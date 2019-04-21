@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col">
                         <h5>Posts related to <?php echo $imageDetails["Title"];?></h5>
                             <?php
