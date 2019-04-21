@@ -58,7 +58,8 @@
                                 <div class="text-center">
                                     <img src="travel-images/square-medium/<?php echo $image['Path'];  ?>" class="img-thumbnail p-2" alt="database down">
                                     <p><?php echo $image['Title']; ?></p>
-                                    <a href="singleImage.php?id=<?php echo $image['ImageID']; ?>" class="btn btn-primary">View</a> <a href="#" class="btn btn-primary">Favorites</a>
+                                    <a href="singleImage.php?id=<?php echo $image['ImageID']; ?>" class="btn btn-primary">View</a>
+				    <button onclick=" addtofav(<?php echo $image['ImageID']; ?>) " class="btn btn-primary">Favorites</button>
                                 </div>
                             </div>
 					<?php	}	?>
