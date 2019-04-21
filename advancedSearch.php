@@ -23,7 +23,7 @@
                         <h2>Search for Posts</h2>
                         <div class="form-group">
                             <label for="postTitle">Post Title</label>
-                            <input class="form-control" id="postTitle" type="text" name="title" placeholder="Enter post title here">
+                            <input class="form-control" id="postTitle" type="text" name="postTitle" placeholder="Enter post title here">
                         </div>
                         <button class="btn btn-primary" type="submit">Search for Posts</button>
                     </form>
@@ -31,12 +31,12 @@
                         <h2>Search for Travel Images</h2>
                         <div class="form-group">
                             <label for="postTitle">Image Title</label>
-                            <input class="form-control" id="postTitle" type="text" name="title" placeholder="Enter image title here">
+                            <input class="form-control" id="imageTitle" type="text" name="imageTitle" placeholder="Enter image title here">
                         </div>
                         <div class="form-group">
                             <label for="city">City</label>
                             <select class="form-control" id="city" name="city">
-                                <option value="all">All Cities</option>
+                                <option value="">All Cities</option>
                                 <?php
                                     foreach($cities as $row) {
                                         echo "<option value='{$row["ID"]}'>{$row["name"]}</option>";
@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="country">Country</label>
                             <select class="form-control" id="country" name="country">
-                                <option value="all">All Countries</option>
+                                <option value="">All Countries</option>
                                 <?php
                                     foreach($countries as $row) {
                                         echo "<option value='{$row["ISO"]}'>{$row["CountryName"]}</option>";
