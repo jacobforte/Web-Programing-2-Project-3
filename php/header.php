@@ -1,3 +1,83 @@
+<?php
+	
+	session_start();
+
+	if(empty($_SESSION['favorite'])){
+		$_SESSION['favorite'] = array();
+	}
+	if(empty($_SESSION['favoritepost'])){
+		$_SESSION['favoritepost'] = array();
+	}
+	
+	if(isset($_POST['imageid'])){
+				
+				
+		array_push($_SESSION['favorite'], $_POST['imageid']); 
+
+
+
+			
+	}
+	if(isset($_POST['postid'])){
+				
+				
+		array_push($_SESSION['favoritepost'], $_POST['postid']); 
+
+
+
+			
+	}
+	
+	if(isset($_POST['endsession'])){
+		
+		session_destroy();
+		
+		header("Location: favorites.php");
+		exit;
+		
+	}
+?>
+
+<script>
+	
+	function addtofav(str) {
+	
+	$.ajax({
+		url:"",
+		type: "POST",
+		data:{
+			imageid: str
+		},
+		success:function(data) {	
+			alert("added to favorites");
+		},
+			error:function(data){
+				alert("Whoops, something went wrong! Please try again.");
+			}
+	});
+						
+	}
+	
+	function addtofavpost(str) {
+	
+	$.ajax({
+		url:"",
+		type: "POST",
+		data:{
+			postid: str
+		},
+		success:function(data) {	
+			alert("added to favorites post");
+		},
+			error:function(data){
+				alert("Whoops, something went wrong! Please try again.");
+			}
+	});
+						
+	}
+
+</script>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Oh The Places You'll Go</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
