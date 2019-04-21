@@ -3,7 +3,7 @@
 
     $searchResults;
     if (isset($_GET["postTitle"])) {
-        $searchResults = new SearchResults(true, $_GET["postTitle"], "", "");
+        $searchResults = new SearchResults(true, $_GET["postTitle"], "", "", "");
     }
     elseif (isset($_GET["imageTitle"])) {
         $city = "";
@@ -14,7 +14,10 @@
         if (isset($_GET["country"])) {
             $country = $_GET["country"];
         }
-        $searchResults = new SearchResults(false, $_GET["imageTitle"], $city, $country);
+        $searchResults = new SearchResults(false, $_GET["imageTitle"], $city, $country, "");
+    }
+    elseif (!empty($_GET["continent"])) {
+        $searchResults = new SearchResults(false, "", "", "", $_GET["continent"]);
     }
     else {
         die("Invalid query string");

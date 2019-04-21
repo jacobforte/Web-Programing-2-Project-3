@@ -9,9 +9,9 @@
                 <p class="mb-0">Simple Search</p>
             </div>
             <div class="card-body">
-                <form action="" method="post">
+                <form action="searchResults.php" method="get">
                     <div class="input-group">
-                        <input type="text" name="term" class="form-control">
+                        <input type="text" name="imageTitle" class="form-control">
                         <div class="input-group-append">
                             <button type="submit" name="searchSubmit" class="btn btn-primary"><i class="fas fa-search"></i></button>
                         </div>
@@ -29,7 +29,7 @@
                 $data = dbconnection("spSelectAllContinents()");
                 foreach ($data as $continent) {
                     echo '<li class="list-group-item">';
-                    echo '<a href="searchResults.php?id=' . $continent['ContinentCode'] . '">' . $continent['ContinentName'] . '</a>';
+                    echo '<a href="searchResults.php?continent=' . $continent['ContinentCode'] . '">' . $continent['ContinentName'] . '</a>';
                     echo '</li>';
                 }
             ?>
