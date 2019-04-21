@@ -30,7 +30,7 @@
 
         <main div class="container-fluid mt-2">
             <div class="row">
-                <div class="col-md-3 mt-2 order-last order-md-first">
+                <div class="col-lg-3 mt-2 order-last order-lg-first">
                     <?php include("php/home/sidebar.inc.php") ?>
                 </div>
                 <div class="col-md">
@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-auto mb-4">
                             <a data-toggle="modal" data-target="#imgModal" href="">
-                                <img src="travel-images/medium/<?php echo $imageDetails["Path"];?>">
+                                <img class="img-fluid" src="travel-images/medium/<?php echo $imageDetails["Path"];?>">
                             </a>
                         </div>
                         <div class="col-xl-4">
