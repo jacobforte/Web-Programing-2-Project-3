@@ -43,7 +43,7 @@
                             </a>
                         </div>
                         <div class="col-xl-4">
-                            <a href="#" class="btn btn-light text-primary"><i class="fas fa-gift"></i> Add to Favorites List</a>
+                            <button onclick="addtofav(<?php echo $_GET['id']; ?>)" class="btn btn-light text-primary"><i class="fas fa-gift"></i> Add to Favorites List</button>
                             <br>
                             <br>
                             <div class="card border-info">
