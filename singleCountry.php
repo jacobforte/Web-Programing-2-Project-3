@@ -41,7 +41,7 @@
 							<p><?php echo $countryid[0]['CountryDescription']; ?></p>
 							
 							<ul class="list-group">
-                                <h2 class="list-group-item active">Country Info</h2>
+                                <h2 class="list-group-item bg-primary text-white">Country Info</h2>
                                 <li class="list-group-item"><strong>Capitol:</strong> <?php echo $countryid[0]['Capital']; ?></li>
                                 <li class="list-group-item"><strong>Population:</strong> <?php echo $countryid[0]['Population'];?></li>
                                 <li class="list-group-item"><strong>Area:</strong> <?php echo $countryid[0]['Area'];?></li>	

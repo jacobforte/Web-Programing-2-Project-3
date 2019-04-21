@@ -43,11 +43,11 @@
                             </a>
                         </div>
                         <div class="col-xl-4">
-                            <button onclick="addtofav(<?php echo $_GET['id']; ?>)" class="btn btn-light text-primary"><i class="fas fa-gift"></i> Add to Favorites List</button>
+                            <button onclick="addtofav(<?php echo $_GET['id']; ?>)" class="btn btn-light text-white"><i class="fas fa-gift"></i> Add to Favorites List</button>
                             <br>
                             <br>
                             <div class="card border-info">
-                                <div class="card-header text-white bg-info">
+                                <div class="card-header text-white bg-primary">
                                     Rating
                                 </div>
                                 <div class="card-body">

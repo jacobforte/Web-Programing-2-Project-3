@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <ul class="list-group">
-                                        <h2 class="list-group-item active">Post Details</h2>
+                                        <h2 class="list-group-item bg-primary text-white">Post Details</h2>
                                         <li class="list-group-item"><strong>Date:</strong> <?php echo $row[0]['PostTime']; ?></li>
                                         <li class="list-group-item"><strong>Posted By:</strong> <?php echo $row2[0]['FirstName'];?> <?php echo $row2[0]['LastName'];?></li>
                                     </ul>
