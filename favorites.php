@@ -65,14 +65,13 @@
 							
 							foreach($image as $idimage){
 								
-								$row = dbconnection("spSelectImages('$idimage')");	
+								$row = dbconnection("spSelectSingleImage('$idimage')");	
 								
 					?>
 						
 					<div class="col-12 col-md-10 <?php echo $idimage; ?>">
 						
-							<h3><a href="singleImage.php?id=<?php echo $row[0]['ImageID']; ?>"> <?php echo $row[0]['Title']; ?> </a></h3>
-							<p><?php echo $row[0]['Description']; ?></p>
+							<h3><a href="singleImage.php?id=<?php echo $idimage; ?>"> <?php echo $row[0]['Title']; ?> </a></h3>
 							<img src="travel-images/square-medium/<?php echo $row[0]['Path']; ?>" class="img-thumbnail p-2" alt="database down">
 
 							<button onclick="removefav(<?php echo $idimage; ?>) " class="btn btn-primary btn-sm mb-5">Remove</button>
@@ -82,7 +81,7 @@
 					</div>
 
 					
-					<?php }	?>					
+					<?php }	?>						
 					
 					
 					
