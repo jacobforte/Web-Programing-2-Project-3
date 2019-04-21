@@ -18,7 +18,7 @@ class SinglePostResult {
             <p class='small mb-1'>Posted on {$this->postTime}</p>
             <p class='mb-0'>" . mb_strimwidth(strip_tags($this->message), 0, 255, "...") . "</p>
             <a class='btn btn-primary mt-2' href='singlePost.php?id={$this->id}'>View Post</a>
-            <a class='btn btn-primary mt-2 ml-2' href='#'>Add to Favorites</a>
+            <button class='btn btn-primary mt-2 ml-2' onclick=' addtofavpost({$this->id})'>Add to Favorites</button>
         </div>";
     }
 
