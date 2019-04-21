@@ -10,3 +10,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <link rel="stylesheet" href="css/mainCSSFile.css">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Sans+Pro" rel="stylesheet">
