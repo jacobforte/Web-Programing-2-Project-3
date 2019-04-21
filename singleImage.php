@@ -11,10 +11,11 @@
         die("Invalid id");
     }
 
-    $imageDetails = dbconnection("spSelectSingleImage({$imageID})")[0];
-    if (!isset($imageDetails)) {
+    $imageDetails = dbconnection("spSelectSingleImage({$imageID})");
+    if (empty($imageDetails)) {
         die("Invalid id");
     }
+    $imageDetails = $imageDetails[0];
 
     $posts = dbconnection("spSelectPostsOnImage({$imageID})");
 ?>
