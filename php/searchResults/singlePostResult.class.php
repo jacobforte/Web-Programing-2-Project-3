@@ -12,7 +12,7 @@ class SinglePostResult {
         $this->message = $message;
     }
 
-    function print() {
+    function output() {
         echo "<div class='col-12 col-lg-6 mb-4 element' title='{$this->postTitle}'>
             <h5><a href='singlePost.php?id={$this->id}'>{$this->postTitle}</a></h5>
             <p class='small mb-1'>Posted on {$this->postTime}</p>

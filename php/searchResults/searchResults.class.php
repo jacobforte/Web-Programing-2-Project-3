@@ -27,7 +27,7 @@ class SearchResults {
         }
     }
 
-    function print() {
+    function output() {
         if (empty($this->searchResultsArray)) {
             echo "<div class='col'>
                     <p>No results for the selected criteria</p>
@@ -35,7 +35,7 @@ class SearchResults {
             return;
         }
         foreach($this->searchResultsArray as $row) {
-            $row->print();
+            $row->output();
         }
     }
 }

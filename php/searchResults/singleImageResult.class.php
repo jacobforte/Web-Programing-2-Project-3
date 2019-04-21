@@ -10,7 +10,7 @@ class SingleImageResult {
         $this->path = $path;
     }
 
-    function print() {
+    function output() {
         echo "<div class='col-lg-3 col-md-4 col-sm-6 element' title='{$this->title}'>
             <div class='card mx-2 my-1'>
                 <a href='singleImage.php?id={$this->id}'><img src='travel-images/square-medium/{$this->path}' alt='Error' class='img-fluid card-img px-4 py-2'></a>

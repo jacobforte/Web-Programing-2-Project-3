@@ -62,7 +62,7 @@
                         </div>
                         <div class="row mt-2" id="list">
                             <?php
-                                $searchResults->print();
+                                $searchResults->output();
                             ?>
                         </div>
                     </div>
