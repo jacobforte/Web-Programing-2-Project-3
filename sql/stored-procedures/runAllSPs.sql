@@ -17,4 +17,4 @@ source spSelectCountry.sql;
 source spSelectCity.sql;
 source spSelectCityPost.sql;
 source spSelectCityImage.sql;
-source spSelectCountryimage.sql;
+source spSelectCountryImage.sql;

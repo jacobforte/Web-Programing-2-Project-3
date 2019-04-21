@@ -1,5 +1,5 @@
 <?php
-    require_once( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programing-2-Project-3/php/" . "dbconnection.function.php");
+    require_once("php/dbconnection.function.php");
 ?>
 
 <div class="row mb-4">

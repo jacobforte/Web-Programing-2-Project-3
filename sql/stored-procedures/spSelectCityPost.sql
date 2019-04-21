@@ -1,6 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS spSelectCityPost$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCityPost`(
+CREATE PROCEDURE spSelectCityPost
+(
     IN citycode varchar(255)
 )
 BEGIN

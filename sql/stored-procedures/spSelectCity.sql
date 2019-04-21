@@ -1,6 +1,9 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS spSelectCity$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCity`(IN `citycode` INT(255))
+CREATE PROCEDURE spSelectCity
+(
+    IN citycode INT(255)
+)
 BEGIN
     SELECT *
     FROM geocities

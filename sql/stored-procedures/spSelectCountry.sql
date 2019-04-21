@@ -1,6 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS spSelectCountry$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCountry`(
+CREATE PROCEDURE spSelectCountry
+(
     IN countrycode varchar(255)
 )
 BEGIN

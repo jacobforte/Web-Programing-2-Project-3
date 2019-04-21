@@ -1,10 +1,8 @@
 <?php
-define('_PATH', $_SERVER["DOCUMENT_ROOT"] . "/Web-Programing-2-Project-3");
-
-require( _PATH . "/php/" . "singleUser/User.php");
-require( _PATH . "/php/" . "singleUser/TravelPost.php");
-require( _PATH . "/php/" . "singleUser/TravelImage.php");
-require( _PATH . "/php/" . "dbconnection.function.php");
+require_once("php/singleUser/User.php");
+require_once("php/singleUser/TravelPost.php");
+require_once("php/singleUser/TravelImage.php");
+require_once("php/dbconnection.function.php");
 
 class SingleUser
 {

@@ -1,7 +1,5 @@
 <?php
-define('_PATH', $_SERVER["DOCUMENT_ROOT"] . "/Web-Programing-2-Project-3");
-
-require( _PATH . "/php/" . "dbconnection.function.php");
+require_once("php/dbconnection.function.php");
 
 function outputUsers() {
     $data = dbconnection("spSelectUser(NULL)");

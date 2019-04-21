@@ -1,6 +1,7 @@
 DELIMITER $$
 DROP PROCEDURE IF EXISTS spSelectCityImage$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCityImage`(
+CREATE PROCEDURE spSelectCityImage
+(
     IN id varchar(255)
 )
 BEGIN
