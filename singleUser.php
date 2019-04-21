@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php include("php/head.php"); ?>
-        <title>Some Title</title>
+        <title>Single User</title>
     </head>
     <body>
         <?php
