@@ -16,7 +16,7 @@ class SingleImageResult {
                 <a href='singleImage.php?id={$this->id}'><img src='travel-images/square-medium/{$this->path}' alt='Error' class='img-fluid card-img px-4 py-2'></a>
                 <div class='text-center'>
                     <a href='singleImage.php?id={$this->id}'>{$this->title}</a>
-                    <a class='btn btn-primary mb-1' href='#'>Add to Favorites</a>
+                    <button class='btn btn-primary mb-1' onclick=' addtofav({$this->id})'>Add to Favorites</button>
                 </div>
             </div>
         </div>";
