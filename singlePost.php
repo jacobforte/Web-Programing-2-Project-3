@@ -30,7 +30,7 @@
                         <div class="col-12 col-xl-3">
                             <div class="row">
                                 <div class="col-12">
-                                    <button onclick="" class="btn btn-lg btn-primary mb-4"><i class="fas fa-heart"></i> Add to Favorites List</button>
+                                    <button onclick=" addtofavpost(<?php echo $_GET['id']; ?>) " class="btn btn-lg btn-primary mb-4"><i class="fas fa-heart"></i> Add to Favorites List</button>
                                 </div>
                             </div>
                             <div class="row">
