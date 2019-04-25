@@ -47,7 +47,7 @@
 								
 					?>
 						
-					<div class="col-12 col-md-10 <?php echo $id; ?>">
+					<div class="col-12 col-md-10 p<?php echo $id; ?>">
 						
 							<h3><a href="singlePost.php?id=<?php echo $id; ?>"> <?php echo $row[0]['Title']; ?> </a></h3>
 							<p><?php echo $row[0]['Message']; ?></p>
@@ -115,7 +115,7 @@
 			postrem: str
 		},
 		success:function(data) {	
-			$('.' + str).fadeOut();
+			$('.p' + str).fadeOut();
 		},
 			error:function(data){
 				alert("Whoops, something went wrong! Please try again.");
