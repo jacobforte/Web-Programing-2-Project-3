@@ -19,3 +19,4 @@ source spSelectCityPost.sql;
 source spSelectCityImage.sql;
 source spSelectCountryImage.sql;
 source spUserLogin.sql;
+source spNewUser.sql;
