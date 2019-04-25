@@ -8,7 +8,7 @@
 				$usernam = $_POST['email'];
 				$userpass= $_POST['password'];
 				
-				$row = dbconnection("spSelectUser('$usernam','$userpass')");
+				$row = dbconnection("spUserLogin('$usernam','$userpass')");
 				
 				if($row[0] != NULL){
 				
