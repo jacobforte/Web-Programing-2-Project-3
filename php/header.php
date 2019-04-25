@@ -107,13 +107,26 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="moreDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
+				<?php
+					if(isset($_SESSION['username'])){
+						echo $_SESSION['username'];
+					}
+					else 
+						echo "More";
+				?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="moreDropDown">
                     <a class="dropdown-item" href="favorites.php">View Favorites</a>
                     <a class="dropdown-item" href="#">My Account</a>
-                    <a class="dropdown-item" href="#">Register</a>
-                    <a class="dropdown-item" href="#">Login</a>
+                    <a class="dropdown-item" href="register.php">Register</a>
+				<?php
+					if(isset($_SESSION['username'])){
+						echo '<a class="dropdown-item" href="login.php?logout=1">Logout</a>';					
+					}
+					else{ 
+						echo '<a class="dropdown-item" href="login.php">Login</a>';						
+					}
+				?>
                 </div>
             </li>
         </ul>
