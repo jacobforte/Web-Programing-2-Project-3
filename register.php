@@ -27,6 +27,18 @@
                         <h4 class="font-weight-bold">Create New Account</h4>
 						
                         <form action="userreg.php" method="post">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-12 mb-2 mb-md-0 col-md-6">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" name="firstName" class="form-control" id="firstName" required/>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="firstName">Last Name</label>
+                                        <input type="text" name="lastName" class="form-control" id="lastName" required/>
+                                    </div>
+                                </div>
+                            </div>
 						
                             <div class="form-group">
                                 <label for="email">Email</label>

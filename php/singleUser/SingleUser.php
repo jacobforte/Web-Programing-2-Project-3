@@ -119,22 +119,40 @@ class SingleUser
                         <h5>Address</h5>';
                         if ($hide)
                             echo '<p class="text-muted">Hidden</p>';
-                        else
-                            echo '<address>' . $this->user->getAddress() . '<br>' . $this->user->getCity() . ', ' . $this->user->getCountry() . ' ' . $this->user->getPostal() . '</address>';
+                        else {
+                            if ($this->user->getAddress() != null) {
+                                echo '<address>' . $this->user->getAddress() . '<br>' . $this->user->getCity() . ', ' . $this->user->getCountry() . ' ' . $this->user->getPostal() . '</address>';
+                            }
+                            else {
+                                echo '<p>No address found.</p>';
+                            }
+                        }
                     echo '</div>
                     <div class="col-12 col-sm-4 col-md-12">
                         <h5>Phone</h5>';
                         if ($hide)
                             echo '<p class="text-muted">Hidden</p>';
-                        else
-                            echo '<p>' . $this->user->getPhone() .'</p>';
+                        else {
+                            if ($this->user->getPhone() != null) {
+                                echo '<p>' . $this->user->getPhone() .'</p>';
+                            }
+                            else {
+                                echo '<p>No phone number found.</p>';
+                            }
+                        }
                     echo '</div>
                     <div class="col-12 col-sm-4 col-md-12">
                         <h5>Email</h5>';
                         if ($hide)
                             echo '<p class="text-muted">Hidden</p>';
-                        else
-                            echo '<p>' . $this->user->getEmail() . '</p>';
+                        else {
+                            if ($this->user->getEmail() != null) {
+                                echo '<p>' . $this->user->getEmail() . '</p>';
+                            }
+                            else {
+                                echo '<p>No email found.</p>';
+                            }
+                        }
                     echo '</div>
                 </div>';
         }
