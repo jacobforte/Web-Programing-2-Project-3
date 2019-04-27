@@ -56,6 +56,29 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <div class="row">
+							<div class="col-12">
+								<h5 class="font-weight-bold mb-3">Most Recent Post</h5>
+							</div>
+							<?php 
+								include_once("php/dbconnection.function.php");
+								
+								$row = dbconnection("spSelectAllPost()");
+								
+								$a=0;
+								for($a=0;$a<3;$a++){
+									
+								
+							?>
+							<div class="col-12">
+								<?php	
+									echo '<h5 class="font-weight-bold mb-3"><a href="singlePost.php?id=' . $row[$a]['PostID'] . '">' . $row[$a]['Title'] . '</a></h5>';
+									echo mb_strimwidth($row[$a]['Message'], 0, 255) . '...';
+								?>
+							</div>
+							
+								<?php } ?>
+						</div>
+                        <div class="row">
                             <div class="col-12">
                                 <h5 class="font-weight-bold mb-3">Top Images</h5>
                             </div>
