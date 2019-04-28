@@ -10,32 +10,20 @@
 	}
 	
 	if(isset($_POST['imageid'])){
-				
-				
 		array_push($_SESSION['favorite'], $_POST['imageid']); 
-
-
-
-			
 	}
+
 	if(isset($_POST['postid'])){
-				
-				
 		array_push($_SESSION['favoritepost'], $_POST['postid']); 
-
-
-
-			
 	}
 	
 	if(isset($_POST['endsession'])){
-		
 		session_destroy();
-		
 		header("Location: favorites.php");
 		exit;
-		
 	}
+
+
 ?>
 
 <script>
@@ -120,11 +108,14 @@
                     <a class="dropdown-item" href="#">My Account</a>
 				<?php
 					if(isset($_SESSION['username'])){
-						echo '<a class="dropdown-item" href="login.php?logout=1">Logout</a>';					
+						if($_SESSION['usertype'] == 2) {
+							echo '<a class="dropdown-item" href="adminBrowseUsers.php">Edit Users</a>';
+						}
+						echo '<a class="dropdown-item" href="login.php?logout=1">Logout</a>';
 					}
 					else{ 
-						echo '<a class="dropdown-item" href="login.php">Login</a>	
-						<a class="dropdown-item" href="register.php">Register</a>';					
+						echo '<a class="dropdown-item" href="login.php">Login</a>
+						<a class="dropdown-item" href="register.php">Register</a>';
 					}
 				?>
                 </div>

@@ -7,6 +7,10 @@ function outputUsers() {
 
     echo '<div class="row">';
     foreach ($data as $user) {
+        //Don't display admin users, they won't have posts or images.
+        if ($user["State"] == 2) {
+            continue;
+        }
         $sqlDate = strtotime($user["DateJoined"]);
         $formattedDate = date("M d, Y", $sqlDate);
         echo '<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
