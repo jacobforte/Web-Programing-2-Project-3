@@ -1,8 +1,11 @@
 <?php 
     if(isset($_GET['logout'])){
-        $check = $_GET['logout'];
-        if($check == 1){
+        if($_GET['logout'] == 1){
+                session_start();
+
                 unset($_SESSION['username']);
+                unset($_SESSION['userpass']);
+                unset($_SESSION['usertype']);
                 session_destroy();
 
                 header("Location: login.php");
