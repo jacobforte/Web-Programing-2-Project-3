@@ -1,3 +1,16 @@
+<?php 
+    if(isset($_GET['logout'])){
+        $check = $_GET['logout'];
+        if($check == 1){
+                unset($_SESSION['username']);
+                session_destroy();
+
+                header("Location: login.php");
+                exit;
+        }
+    }
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -8,22 +21,7 @@
         <?php include("php/header.php"); ?>
 		<?php include_once("php/dbconnection.function.php"); ?>
 		
-		<?php 
-			
-			if(isset($_GET['logout'])){
-				$check = $_GET['logout'];
-				if($check == 1){
-						unset($_SESSION['username']);
-						session_destroy();
-
-						header("Location: login.php");
-						exit;
-				}
-			}
-		
-		?>
-		
-        <main class="container-fluid mt-4">
+        <main class="container mt-4">
 		
 			<div class="row">
 
@@ -49,7 +47,7 @@
                                 <button type="submit" class="btn btn-lg btn-success">Submit</button>
                             </div>
                             <div class="form-group">
-                                <a href="#" class="mb-2">Need an account?</a>
+                                <a href="register.php" class="mb-2">Need an account?</a>
                             </div>
 							
                         </form>

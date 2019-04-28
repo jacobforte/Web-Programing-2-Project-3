@@ -7,14 +7,8 @@
     <body>
         <?php include("php/header.php"); ?>
 		<?php include_once("php/dbconnection.function.php"); ?>
-		
-		<?php 
-			
 
-		
-		?>
-		
-        <main class="container-fluid mt-4">
+        <main class="container mt-4">
 		
 			<div class="row">
 
