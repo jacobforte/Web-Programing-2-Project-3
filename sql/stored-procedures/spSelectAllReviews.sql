@@ -6,7 +6,7 @@ CREATE PROCEDURE spSelectAllReviews()
 
 BEGIN
 
-	SELECT * FROM travelimagerating ORDER BY travelimagerating.datecreated DESC;
+	SELECT * FROM travelimagerating ORDER BY travelimagerating.ReviewTime DESC;
 
 END$$
 DELIMITER ;
