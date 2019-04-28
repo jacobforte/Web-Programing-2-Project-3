@@ -62,20 +62,28 @@
 							<?php 
 								include_once("php/dbconnection.function.php");
 								
-								$row = dbconnection("spSelectAllPost()");
+								$row = dbconnection("spSelectAllReviews()");
+								
 								
 								$a=0;
-								for($a=0;$a<3;$a++){
+								for($a=0;$a<2;$a++){
 									
+									$image = $row[$a]['ImageID'];
+									$row2 = dbconnection("spSelectCityImage('$image')")[0];
 								
 							?>
-							<div class="col-12">
-								<?php	
-									echo '<h5 class="font-weight-bold mb-3"><a href="singlePost.php?id=' . $row[$a]['PostID'] . '">' . $row[$a]['Title'] . '</a></h5>';
-									echo mb_strimwidth($row[$a]['Message'], 0, 255) . '...';
+							<div class="row">
+							<div class="col-4 ml-3 mb-2">
+								<?php
+									echo '<a href="singleImage.php?id=' . $row2['ImageID'] . '"><img src="travel-images/square-medium/' . $row2['Path'] . '" class="img-thumbnail p-2" alt="database down"></a>';
 								?>
 							</div>
-							
+							<div class="col-4">
+								<?php	
+									echo '<p>' . mb_strimwidth($row[$a]['comment'], 0, 255) . '...</p>';
+								?>
+							</div>
+							</div>
 								<?php } ?>
 						</div>
                         <div class="row">
