@@ -57,7 +57,7 @@
                     <div class="col-12 col-md-9">
                         <div class="row">
 							<div class="col-12">
-								<h5 class="font-weight-bold mb-3">Most Recent Post</h5>
+								<h5 class="font-weight-bold mb-3">Most Recent Reviews</h5>
 							</div>
 							<?php 
 								include_once("php/dbconnection.function.php");
