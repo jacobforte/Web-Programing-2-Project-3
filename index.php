@@ -51,45 +51,45 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 order-last col-md-3 order-md-first">
+                    <div class="col-auto order-last col-md-3 order-md-first">
                         <?php include("php/home/sidebar.inc.php") ?>
                     </div>
-                    <div class="col-12 col-md-9">
+                    <div class="col">
                         <div class="row">
-							<div class="col-12">
-								<h5 class="font-weight-bold mb-3">Most Recent Reviews</h5>
-							</div>
-							<?php 
-								include_once("php/dbconnection.function.php");
-								
-								$row = dbconnection("spSelectAllReviews()");
-								
-								
-								$a=0;
-								for($a=0;$a<2;$a++){
-									
-									$image = $row[$a]['ImageID'];
-									$user = $row[$a]['UID'];
-									$row2 = dbconnection("spSelectCityImage('$image')")[0];
-									$row3 = dbconnection("spSelectUser('$user')")[0];
-								
-							?>							
-							<div class="row ml-1 mb-2">
-							<div class="col-md-6">
-								<?php
-									echo '<a href="singleImage.php?id=' . $row2['ImageID'] . '"><img src="travel-images/square-medium/' . $row2['Path'] . '" class="img-thumbnail p-1" alt="database down"></a>';
-								
-								?>
-							</div>
-							<div class="col-md-6">
-								<?php	
-									echo '<p>' . mb_strimwidth($row[$a]['Review'], 0, 50) . '...</p>';
-									echo '<p>- <a href="SingleUser.php?id=' . $row3['UID'] . '">' . $row3['FirstName'] . ' ' . $row3['LastName'] . '</a></p>';
-								?>
-							</div>
-							</div>
-								<?php } ?>
-						</div>
+                            <div class="col">
+                                <h5 class="font-weight-bold mb-3">Most Recent Reviews</h5>
+                            </div>
+                        </div>
+                        <div class="row ml-1 mb-2">
+                            <?php 
+                                include_once("php/dbconnection.function.php");
+                                
+                                $row = dbconnection("spSelectAllReviews()");
+                                
+                                
+                                $a=0;
+                                for($a=0;$a<2;$a++){
+                                    
+                                    $image = $row[$a]['ImageID'];
+                                    $user = $row[$a]['UID'];
+                                    $row2 = dbconnection("spSelectCityImage('$image')")[0];
+                                    $row3 = dbconnection("spSelectUser('$user')")[0];
+                                
+                            ?>
+                                    <div class="col-md-auto">
+                                        <?php
+                                            echo '<a href="singleImage.php?id=' . $row2['ImageID'] . '"><img src="travel-images/square-medium/' . $row2['Path'] . '" class="img-thumbnail p-1" alt="database down"></a>';
+                                        
+                                        ?>
+                                    </div>
+                                    <div class="col">
+                                        <?php	
+                                            echo '<p>' . mb_strimwidth($row[$a]['Review'], 0, 200) . '...</p>';
+                                            echo '<p>- <a href="SingleUser.php?id=' . $row3['UID'] . '">' . $row3['FirstName'] . ' ' . $row3['LastName'] . '</a></p>';
+                                        ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                         <div class="row">
                             <div class="col-12">
                                 <h5 class="font-weight-bold mb-3">Top Images</h5>
@@ -106,6 +106,7 @@
                         <div class="row">
                             <?php outputNewImages(); ?>
                         </div>
+                        
                     </div>
                 </div>
             </div>
