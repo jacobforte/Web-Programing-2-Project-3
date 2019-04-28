@@ -69,18 +69,22 @@
 								for($a=0;$a<2;$a++){
 									
 									$image = $row[$a]['ImageID'];
+									$user = $row[$a]['UID'];
 									$row2 = dbconnection("spSelectCityImage('$image')")[0];
+									$row3 = dbconnection("spSelectUser('$user')")[0];
 								
-							?>
-							<div class="row">
-							<div class="col-4 ml-3 mb-2">
+							?>							
+							<div class="row ml-1 mb-2">
+							<div class="col-md-6">
 								<?php
-									echo '<a href="singleImage.php?id=' . $row2['ImageID'] . '"><img src="travel-images/square-medium/' . $row2['Path'] . '" class="img-thumbnail p-2" alt="database down"></a>';
+									echo '<a href="singleImage.php?id=' . $row2['ImageID'] . '"><img src="travel-images/square-medium/' . $row2['Path'] . '" class="img-thumbnail p-1" alt="database down"></a>';
+								
 								?>
 							</div>
-							<div class="col-4">
+							<div class="col-md-6">
 								<?php	
-									echo '<p>' . mb_strimwidth($row[$a]['comment'], 0, 255) . '...</p>';
+									echo '<p>' . mb_strimwidth($row[$a]['Review'], 0, 50) . '...</p>';
+									echo '<p>- <a href="SingleUser.php?id=' . $row3['UID'] . '">' . $row3['FirstName'] . ' ' . $row3['LastName'] . '</a></p>';
 								?>
 							</div>
 							</div>
