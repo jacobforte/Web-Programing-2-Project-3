@@ -21,4 +21,4 @@ source spSelectCountryImage.sql;
 source spUserLogin.sql;
 source spNewUser.sql;
 source spUserCheck.sql;
-source spSelectAllPost.sql;
+source spSelectAllReviews.sql;
