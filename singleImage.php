@@ -105,7 +105,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <h5>Reviews will go here in part 2</h5>
+                           <?php outputReviewSection($_GET['id']); ?>
                         </div>
                     </div>
                     <div class="row mt-2">

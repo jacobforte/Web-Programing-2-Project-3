@@ -22,3 +22,4 @@ source spUserLogin.sql;
 source spNewUser.sql;
 source spUserCheck.sql;
 source spSelectAllReviews.sql;
+source spSelectReviews.sql;

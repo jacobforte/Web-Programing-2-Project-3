@@ -26,4 +26,36 @@ function outputImagesOnPosts($postID) {
         </div>";
     }
 }
-?>
+
+function outputReviewSection($imageId) {
+    require_once("php/dbconnection.function.php");
+    $reviews = dbconnection("spSelectReviews(\"$imageId\")");
+
+    echo '<div class="row">
+        <div class="col-12">
+            <h5>Reviews</h5>
+        </div></div>';
+
+    foreach ($reviews as $review) {
+        echo '<div class="row">
+            <div class="col-12">';
+        echo '<h6 class="mb-1"><a href="singleUser.php?id=' . $review["UID"] . '">' . $review["FirstName"] . ' ' . $review["LastName"] . '</a></h6>';
+        echo '</div></div>';
+
+        echo '<div class="row mb-1">
+            <div class="col-12">';
+        for ($i = 0; $i < $review['Rating']; $i++) {
+            echo '<i class="fas fa-star text-primary"></i>';
+        }
+        while ($i != 5) {
+            echo '<i class="far fa-star text-primary"></i>';
+            $i++;
+        }
+        echo '</div></div>';
+
+        echo '<div class="row">
+            <div class="col-12">';
+        echo '<p>' . $review["Review"] . '</p>';
+        echo '</div></div>';
+    }
+}
