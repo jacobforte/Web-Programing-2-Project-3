@@ -1,9 +1,8 @@
 <?php
     date_default_timezone_set("America/Chicago");
     require_once("php/dbconnection.function.php");
-    require_once("php/singleImage.functions.php");
+    require_once("php/singleImage/singleImage.functions.php");
 
-    $imageID;
     if (isset($_GET['id']) && preg_match("/\A[0-9]+\z/", $_GET['id']) == 1) {
         $imageID = $_GET['id'];
     }
@@ -24,12 +23,13 @@
 <html lang="en">
     <head>
         <?php include("php/head.php"); ?>
+        <script src="js/singleImage/singleImage.js"></script>
         <title>Single Image</title>
     </head>
     <body>
         <?php include("php/header.php"); ?>
-
-        <main div class="container-fluid mt-2">
+        <main>
+            <div class="container-fluid mt-2">
             <div class="row">
                 <div class="col-lg-3 mt-2 order-last order-lg-first">
                     <?php include("php/home/sidebar.inc.php") ?>
@@ -104,9 +104,11 @@
                         </div>
                     </div>
                     <div class="row mt-2">
-                        <div class="col">
-                           <?php outputReviewSection($_GET['id']); ?>
+                        <div class="col-12">
+                           <h5>Reviews</h5>
                         </div>
+                    </div>
+                    <div class="row" id="reviewSection">
                     </div>
                     <div class="row mt-2">
                         <div class="col">
@@ -157,4 +159,59 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 d-none" id="checkForm">
+                            <div class="alert alert-warning" id="checkMessage" role="alert"></div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="reviewDescription">Review</label>
+                                <textarea class="form-control mb-3" id="reviewDescription" name="reviewDescription" rows="5"></textarea>
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="rating">Rating</label>
+                                <div id="rating">
+                                    <i class="far fa-star fa-lg text-primary reviewStar" onclick="highlightStar(this)" id="oneStar"></i>
+                                    <i class="far fa-star fa-lg text-primary reviewStar" onclick="highlightStar(this)" id="twoStar"></i>
+                                    <i class="far fa-star fa-lg text-primary reviewStar" onclick="highlightStar(this)" id="threeStar"></i>
+                                    <i class="far fa-star fa-lg text-primary reviewStar" onclick="highlightStar(this)" id="fourStar"></i>
+                                    <i class="far fa-star fa-lg text-primary reviewStar" onclick="highlightStar(this)" id="fiveStar"></i>
+                                </div>
+                                <input type="hidden" id="ratingValue" value="0" name="ratingValue" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="addReview(<?php echo $_SESSION['uid'] . ', ' . $_GET['id']; ?>)" class="btn btn-primary">Post Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
+
+<script>
+    $(document).ready(function() {
+        fetchReviews(
+            <?php
+                echo $_GET['id'];
+                if(isset($_SESSION['uid']))
+                    echo ', ' . $_SESSION['uid'];
+
+            ?>);
+    });
+</script>
+
+
+

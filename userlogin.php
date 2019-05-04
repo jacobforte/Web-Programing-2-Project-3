@@ -12,6 +12,7 @@
 				
 					$_SESSION['username'] = $row['UserName'];
 					$_SESSION['userpass'] = $row['Password'];
+					$_SESSION['uid'] = $row['UID'];
 					$_SESSION['usertype'] = $row['State'];
 					header('Location: index.php');
 				
