@@ -208,7 +208,8 @@
                 echo $_GET['id'];
                 if(isset($_SESSION['uid']))
                     echo ', ' . $_SESSION['uid'];
-                echo ', ' . $_SESSION['usertype'];
+                if(isset($_SESSION['usertype']))
+                    echo ', ' . $_SESSION['usertype'];
             ?>);
     });
 </script>
