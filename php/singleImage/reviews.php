@@ -3,20 +3,42 @@
 switch($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         // server side validation?
-        addNewReview();
+        addNewReview($_POST['imageId'], $_POST['UID'], $_POST['rating'], $_POST['review']);
         break;
     case 'GET':
-        // server side validation?
         getReviews($_GET['id']);
         break;
     case 'DELETE':
-        // delete reviews for
+        deleteReview($_GET['reviewId'], $_GET['UID']);
 }
 
-function addNewReview() {
+function addNewReview($imageID, $uid, $rating, $reviewText) {
     require_once("../dbconnection.function.php");
-    dbconnection("spNewReview(" . $_POST['UID'] . ", "
-        . $_POST['imageId'] . ", " . $_POST['rating'] . ", \"" . $_POST['review'] . "\")");
+    $reviews = dbconnection("spSelectReviews(" . $imageID . ")");
+
+    foreach($reviews as $review) {
+        if ($review['UID'] == $uid) {
+            $result['status'] = 'error';
+            $result['message'] = "You've already reviewed this image.";
+            echo json_encode($result);
+            return;
+        }
+    }
+
+    if ($rating == "" || $reviewText == "") {
+        $result['status'] = 'error';
+        $result['message'] = "Please enter all fields.";
+        echo json_encode($result);
+        return;
+    }
+
+    dbconnection("spNewReview(" . $uid . ", "
+        . $imageID . ", " . $rating . ", \"" . $reviewText . "\")");
+
+    $result['status'] = 'success';
+    $result['message'] = "Review added.";
+
+    echo json_encode($result);
 }
 
 function getReviews($imageID) {
@@ -26,6 +48,17 @@ function getReviews($imageID) {
     echo json_encode($result);
 }
 
-function deleteReview($reviewID) {
-
+function deleteReview($reviewID, $uid) {
+    require_once("../dbconnection.function.php");
+    $userType = dbconnection("spSelectUser(" . $uid . ")");
+    if ($userType[0]['State'] == 2) {
+        dbconnection("spDeleteReview(" . $reviewID . ")");
+        $result['status'] = 'success';
+        $result['message'] = 'Successfully deleted.';
+    }
+    else {
+        $result['status'] = 'error';
+        $result['message'] = 'Insufficient access rights.';
+    }
+    echo json_encode($result);
 }

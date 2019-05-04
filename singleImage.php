@@ -194,7 +194,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="addReview(<?php echo $_SESSION['uid'] . ', ' . $_GET['id']; ?>)" class="btn btn-primary">Post Review</button>
+                    <button type="button" onclick="addReview(<?php echo $_SESSION['uid'] . ', ' . $_GET['id'] . ', ' . $_SESSION['usertype']; ?>)" class="btn btn-primary">Post Review</button>
                 </div>
             </div>
         </div>
@@ -208,7 +208,7 @@
                 echo $_GET['id'];
                 if(isset($_SESSION['uid']))
                     echo ', ' . $_SESSION['uid'];
-
+                echo ', ' . $_SESSION['usertype'];
             ?>);
     });
 </script>

@@ -1,4 +1,4 @@
-function addReview(uid, id) {
+function addReview(uid, id, userType) {
     if ($("#reviewDescription").val() === "" || $("#ratingValue").val() === "0") {
         $('#checkForm').removeClass('d-none');
         $('#checkMessage').empty().append('Please enter all fields.');
@@ -14,13 +14,13 @@ function addReview(uid, id) {
                 rating: $("#ratingValue").val(),
             },
             success: function (data) {
-                if (data.status === 'error') {
+                let response = JSON.parse(data);
+                if (response.status === 'error') {
                     $('#checkForm').removeClass('d-none');
-                    $('#checkMessage').empty().append(data.error);
+                    $('#checkMessage').empty().append(response.message);
                 } else {
-                    alert(data);
                     $('#exampleModal').modal('hide');
-                    fetchReviews(id, uid);
+                    fetchReviews(id, uid, userType);
                 }
             },
             error: function (data) {
@@ -70,39 +70,64 @@ function highlightStar($this) {
     }
 }
 
-function fetchReviews(id, uid) {
+function deleteReview(reviewId, uid, userType, imageId) {
     $.ajax({
-        url: "php/singleImage/reviews.php?id=" + id,
+        url: "php/singleImage/reviews.php" + '?' + $.param({
+            "UID": uid,
+            "reviewId" : reviewId,
+            "userType" : userType
+        }),
+        type: "DELETE",
+        success: function (data) {
+            let response = JSON.parse(data);
+            if (response.status === 'error') {
+                alert(response.message);
+            } else {
+                alert(response.message);
+                fetchReviews(imageId, uid, userType);
+            }
+        },
+        error: function (data) {
+            alert(data);
+        }
+    });
+
+}
+
+function fetchReviews(id, uid, userType) {
+    $.ajax({
+        url: "php/singleImage/reviews.php" + '?' + $.param({
+            "id": id,
+        }),
         type: "GET",
         success: function (data) {
             var obj = JSON.parse(data);
+            $('#reviewSection').empty()
             if (obj.status === 0) {
-                $('#reviewSection')
-                    .empty()
-                    .append('<div class="col-12"><h6 class="mb-1">There was a problem fetching reviews. Please try again later.</h6>');
+                $('#reviewSection').append('<div class="col-12"><h6 class="mb-1">There was a problem fetching reviews. Please try again later.</h6>');
             } else {
-                $('#reviewSection').empty();
                 if (typeof uid === 'undefined')
-                    $('#reviewSection').append('<div class="col-12"><a href="userlogin.php" class="btn btn-primary mb-3">Login to Review</a></div>');
+                    $('#reviewSection').append('<div class="col-12"><a href="userlogin.php" class="btn btn-primary">Login to Review</a></div>');
                 else {
                     var found = obj.data.find(function(element) {
                         return element['UID'] == uid;
                     });
                     if (found) {
-                        $('#reviewSection').append('<div class="col-12"><button type="button" class="btn btn-primary disabled mb-3" disabled>Already Reviewed</button></div>');
+                        $('#reviewSection').append('<div class="col-12"><button type="button" class="btn btn-primary disabled" disabled>Already Reviewed</button></div>');
                     }
                     else {
-                        $('#reviewSection').append(
-                            '<div class="col-12"><button type="button" id="postReviewButton" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Post Review</button></div>'
-                        );
+                        $('#reviewSection').append('<div class="col-12"><button type="button" id="postReviewButton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Post Review</button></div>');
                     }
                 }
                 $.each(obj.data, function (i) {
                     $('#reviewSection').append(
-                        '<div class="col-12"><h6 class="mb-1">' + obj.data[i]['FirstName'] + ' ' + obj.data[i]['LastName'] + '</h6></div>',
+                        '<div class="col-12"><h6 class="mt-3 mb-1"><a href="singleUser.php?id=' + obj.data[i]['UID'] + '">' + obj.data[i]['FirstName'] + ' ' + obj.data[i]['LastName'] + '</a></h6></div>',
                         '<div class="col-12 mb-1">' + getStars(obj.data[i]['Rating']) + '</div>',
-                        '<div class="col-12 mb-3">' + obj.data[i]['Review'] + '</div>'
+                        '<div class="col-12 mb-1">' + obj.data[i]['Review'] + '</div>'
                     );
+                    if (userType === 2) {
+                        $('#reviewSection').append('<div class="col-12"><button type="button" onclick="deleteReview(' + obj.data[i]['ImageRatingID'] + ', ' + uid + ', ' + userType + ', ' + id + ')" class="btn btn-primary mt-1">Delete</button>');
+                    }
                 });
             }
         },
