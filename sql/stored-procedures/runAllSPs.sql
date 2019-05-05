@@ -25,3 +25,4 @@ source spSelectAllReviews.sql;
 source spSelectReviews.sql;
 source spNewReview.sql;
 source spDeleteReview.sql;
+source spUpdateUser.sql;
