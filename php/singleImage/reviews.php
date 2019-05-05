@@ -6,10 +6,13 @@ switch($_SERVER['REQUEST_METHOD']) {
         addNewReview($_POST['imageId'], $_POST['UID'], $_POST['rating'], $_POST['review']);
         break;
     case 'GET':
-        getReviews($_GET['id']);
+        if (isset($_GET["delete"])) {
+            deleteReview($_GET["reviewId"], $_GET["UID"]);
+        }
+        else {
+            getReviews($_GET['id']);
+        }
         break;
-    case 'DELETE':
-        deleteReview($_GET['reviewId'], $_GET['UID']);
 }
 
 function addNewReview($imageID, $uid, $rating, $reviewText) {
