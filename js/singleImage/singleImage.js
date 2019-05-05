@@ -75,9 +75,10 @@ function deleteReview(reviewId, uid, userType, imageId) {
         url: "php/singleImage/reviews.php" + '?' + $.param({
             "UID": uid,
             "reviewId" : reviewId,
-            "userType" : userType
+            "userType" : userType,
+            "delete" : 1
         }),
-        type: "DELETE",
+        type: "GET",
         success: function (data) {
             let response = JSON.parse(data);
             if (response.status === 'error') {
@@ -88,7 +89,7 @@ function deleteReview(reviewId, uid, userType, imageId) {
             }
         },
         error: function (data) {
-            alert(data);
+            alert(data["responseText"]);
         }
     });
 
