@@ -30,6 +30,6 @@ BEGIN
         Postal = postal,
         Phone = phone,
         Email = email
-    WHERE UID = uid;
+    WHERE traveluserdetails.UID = uid;
 END$$
 DELIMITER ;
