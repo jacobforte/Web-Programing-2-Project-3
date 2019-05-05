@@ -23,24 +23,33 @@
                             <h2 class="mb-4">Who Implemented What</h2>
 
                             <h4>Jacob</h4>
-                            <p>Search Results</p>
-                            <p>Advanced Search</p>
-                            <p>Display Single Travel Image</p>
-                            <p class="mb-4">Browse Travel Images</p>
+                            <ul>
+                                <li>Search Results</li>
+                                <li>Simple Search</li>
+                                <li>Advanced Search</li>
+                                <li>Display Single Travel Image</li>
+                                <li>Browse Travel Images</li>
+                            </ul>
 
                             <h4>Zach</h4>
-                            <p>Home Page</p>
-                            <p>Navigation (header)</p>
-                            <p>Simple Search</p>
-                            <p class="mb-4">Browse Post / User </p>
+                            <ul>
+                                <li>Home page</li>
+                                <li>Navigation (header/sidebar)</li>
+                                <li>Bootstrap customization</li>
+                                <li>Browse posts/users </li>
+                                <li>View single user</li>
+                                <li>Vertical/horizontal advertisements</li>
+                                <li>View/add/delete reviews</li>
+                            </ul>
 
                             <h4>Marcus</h4>
-                            <p>About Us page</p>
-                            <p>Display Single Post</p>
-                            <p>Add To Favorites </p>
-                            <p>View Favorites</p>
-                            <p>Display Single Country / City </p>
-
+                            <ul>
+                                <li>About Us page</li>
+                                <li>Display Single Post</li>
+                                <li>Add To Favorites </li>
+                                <li>View Favorites</li>
+                                <li>Display Single Country / City </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
