@@ -29,6 +29,7 @@
                                 <li>Advanced Search</li>
                                 <li>Display Single Travel Image</li>
                                 <li>Browse Travel Images</li>
+                                <li>Admin Features</li>
                             </ul>
 
                             <h4>Zach</h4>
@@ -49,6 +50,8 @@
                                 <li>Add To Favorites </li>
                                 <li>View Favorites</li>
                                 <li>Display Single Country / City </li>
+                                <li>User Login/Registration</li>
+                                <li>Recent reviews on Home Page</li>
                             </ul>
                         </div>
                     </div>
